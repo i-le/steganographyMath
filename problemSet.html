@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steganography Math Problems</title>
+</head>
+<body>
+    
+    Question 1
+    You may find it helpful to write a program to answer one or more of the following questions. You can access the DukeLearnToProgram JavaScript environment here: http://www.dukelearntoprogram.com/course1/example/index.php (also linked in the Resources tab).
+    
+    Consider writing the function crop(image, width, height) that has three parameters: image is a complete image, and width and height are numbers. This function creates and returns a new image from the parameter image, with the new image having the width and height of the specified width and height parameters, thus cropping the picture by ignoring the pixels on the rightside or bottomside that are beyond the specified width or height of the picture.
+    
+    Here is a possible crop function with some missing code.
+    
+    
+    if (x < width && y < height){
+         var np = n.getPixel(x,y);
+         np.setRed(p.getRed());
+         np.setBlue(p.getBlue());
+         np.setGreen(p.getGreen()); 
+    
+    
+    
+    Question 2
+    Consider the function crop(image, width, height) that has three parameters: image is a complete image, and width and height are numbers. This function creates and returns a new image from the parameter image, with the new image having the width and height of the specified width and height parameters, thus cropping the picture by ignoring the pixels on the rightside or bottomside that are beyond the specified width or height of the picture. Assume this function works correctly.
+    
+    We select two images to start with:
+     var start = new SimpleImage("astrachan.jpg");
+    var hide = new SimpleImage("Message.jpg")
+    
+    var cropWidth = start.getWidth();
+    if (hide.getWidth() < cropWidth) {
+        cropWidth = hide.getWidth();
+    }
+    var cropHeight = start.getHeight();
+    if (hide.getHeight() < cropHeight) {
+        cropHeight = hide.getHeight();
+    }
+    start = crop(start,cropWidth, cropHeight);
+    hide = crop(hide,cropWidth, cropHeight);
+    print(start);
+    print(hide);
+    
+    
+    Question 3
+    Assume we will hide one image inside another image by hiding information inside half of each pixel. The chop2Hide function zeros out the lower half of each pixel’s RGB components.
+    
+    Suppose a particular pixel has a red value of 195 right before chop2Hide is called. What is that pixel's red value after chop2Hide is called on this image?
+    
+    
+    Correct
+    This is the correct answer.
+    
+    Suppose the red value before calling chop2Hide is 195. Convert that number to binary by seeing which combination of 128 + 64 + 32 + 16 + 8 + 4 + 2 + 1 forms that number. These are the powers of 2 that form an 8-bit number. That is 128 = 2^7, 64 = 2^6, 32 = 2^5, 16=2^4, 8=2^3, 4=2^2, 2=2^1, 1=2^0. Divide 195 by 128. It goes once so the binary number is 128 + ? The remainder of 195 divided by 128 is 67. 64 goes into 67 once with 3 remaining. Thus 195 is 128 + 64 + 2 + 1 = 1 * 2^7 + 1 * 2^6 + 0*2^5 + 0*2^4 + 0*2^3 + 0*2^2 + 1*2^1 + 1 * 2^0. The bolded 0’s and 1’s make up the 8-bit binary representation of the decimal number 195, which is 11000011. The function chop2Hide clears out the lower four bits making them all 0s, or 11000000. The resulting number in decimal is 128 + 64 = 192.
+    
+    Another way to calculate this is to notice that In our code we cleared out the number by dividing the number by 2^4 or 16, converting the result to an integer using Math.floor(), and then multiplying it by 16. If we take the number 195 and divide it by 16 we get 12.1875, convert it to the integer 12, and then multiply 12 by 16 we get 192.
+    
+    
+    4
+    Assume we will hide one image inside another image by hiding information inside half of each pixel. The shift function moves the left half of each pixel’s RGB components to the right, replacing the left half with all zeros. Suppose a particular pixel has a red value of 162 right before shift is called. What is that pixel’s red value after shift is called on this image?
+    
+    10 || 0
+    
+    Question 5
+    Assume we will hide one image inside another image by hiding information inside half of each pixel. If the red color of a pixel in image 1 is 212 (written as 8 binary bits that is 11010100) and the red part of the image 2 we want to hide is 168 (in 8 bits that is 10101000). Then what are the 8 bits for this red color after we have hidden image 2 in image 1 by hiding it in half the pixel data?
+    
+    1101 is from the left half of image1 and the 1010 is from the left half of image 2 shifted.
+    
+    
+    Question 6
+    The function newpv adds two integer parameters together and returns the result. As a safety check, it should also print a message if the result is too big for an RGB value, that is, bigger than 255. Which one of the following is the correct code for the function newpv?
+    
+    
+    function newpv(p,q) {
+         var answer = p + q;
+         if (p + q > 255)   print("error: answer too big");     return answer;
+    }
+    
+    
+    
+    Question 7
+    The function newpv adds two integer parameters together and returns the result. Assume that this function works correctly, and in addition it prints an error message if a resulting pixel’s red, green or blue value is bigger than 255.
+    
+    The function combine has two image parameters a and b. It returns a new image that is the combination of the two images. That is a pixel in the new image will have a red value that is the sum of the red values of the pixels in the same (x,y) location from images a and b, a green value that is the sum of the two green values, and a blue value that is the sum of the two blue values. The function combine assumes the two images it is using to create the new image will not have any sums greater than 255. Consider the combine function below that has missing code in the body of the for loop.
+    
+    function combine(a,b){
+         var n = new SimpleImage(a.getWidth(), a.getHeight());
+         for(var pa of a.values()){
+            // missing code
+         }
+         return n;
+    }
+    Which one of the following has the correct missing code?
+    
+    function combine(a,b){
+         var n = new SimpleImage(a.getWidth(), a.getHeight());
+         for(var pa of a.values()){
+            // missing code
+         }
+         return n;
+    }
+    
+    
+    
+
+
+
+
+
+
+
+
+</body>
+</html>
