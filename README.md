@@ -1,1 +1,3 @@
-# steganographyMathProblemSet
+# steganographyMath
+
+### some javascript recap
