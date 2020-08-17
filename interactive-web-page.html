@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Web Pages</title>
+</head>
+<body>
+    
+    Question 1
+    What is the purpose of initializing the global image variables to null in the green screen web page?
+    
+
+    
+    The code can check if the image is null before processing it.
+    
+    
+    
+    
+    Question 2
+    You would like to display an alert message if the image variable for the foreground image fgImage is not loaded. Which two of the following expressions evaluate to true if the image is not ready?
+    
+    A:
+    
+    ! fgImage.complete()
+    fgImage == null
+    
+
+
+    Question 3
+    In which of the following code snippets does the program alert the user "x is null"?
+    
+   
+    A:
+
+    var x = null;
+    function my Function() {
+    var x = 2;
+    }
+    if( x == null) {
+    alert("x is null");
+    }
+    
+    
+    
+    Question 4
+    You have created the following file input element:
+    
+    
+    Which of the following attributes can you add to restrict the file upload to image files?
+    < input type = "file" onchange="loadImage()" >
+    
+    
+    A: accept="image/*"
+    
+    
+    
+
+    Question 5
+    You have the following code excerpt to allow a user to select a file from the input element with ID "finput" and display it to a canvas with ID "can."
+    
+    
+    Which of the following do you need to add, so that this code will work in CodePen or on another web page?
+    
+    var file = document.getElementById("finput");
+    var image = new SimpleImage(file);
+    var canvas = document.getElementById("can");
+    image.drawTo(canvas);
+    
+    A: A script specifying where to find the JavaScript library for SimpleImage
+    
+    
+    
+    
+    Question 6
+    You have two pixels to convert to grayscale, and you would like to determine visually whether your code is likely to be working, so you work an example by hand.
+    
+    The first pixel is teal and has rgb(0,153,153), and the second pixel is purple and has rgb(153,51,255). Once the grayscale pixels are printed, which one should appear as a lighter gray (closer to white).
+    
+    
+    
+    A: First pixel
+    
+    
+    
+    
+    Question 7
+    You are building a web page, and you create a text input element and specify an element ID for it. Why did you do this?
+    
+    
+    
+    A: You would like to be able to reference the input element programmatically.
+    
+    
+    
+    
+
+</body>
+</html>
