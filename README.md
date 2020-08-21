@@ -1,3 +1,3 @@
 # steganographyMath
 
-### some javascript recap
+### some javascript algorithm recap
